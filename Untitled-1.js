@@ -11,7 +11,7 @@
 // @grant GM_xmlhttpRequest
 // @downloadURL https://github.com/dzx-dzx/Course-Selection-Assistant/raw/master/Untitled-1.js
 // @updateURL https://github.com/dzx-dzx/Course-Selection-Assistant/raw/master/Untitled-1.js
-// @homepageURL 
+// @homepageURL https://github.com/dzx-dzx/Course-Selection-Assistant
 // ==/UserScript==
 
 (async function () {
