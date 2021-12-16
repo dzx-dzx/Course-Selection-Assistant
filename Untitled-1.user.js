@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SJTU-Course Selection Assistant
 // @namespace    http://tampermonkey.net/
-// @version      0.1
+// @version      0.1.1
 // @description  添加一个打开选课社区(course.sjtu.plus)的按钮
 // @author       Me
 // @match        https://i.sjtu.edu.cn/xsxk/zzxkyzb_cxZzxkYzbIndex.html*
@@ -74,7 +74,7 @@
         tr.querySelector("td.jxbmc").append(document.createElement("br"), button)
     }
     document.querySelectorAll("div.panel-body > table > tbody > tr ").forEach((tr => {
-        if (tr.querySelector(".kkxymc").textContent === "") addButton(tr)
+        if (tr.querySelector(".kkxymc").textContent !== "") addButton(tr)
     }))
 
     const observer = new MutationObserver((mutationList) => {
