@@ -12,6 +12,7 @@
 // @downloadURL https://raw.githubusercontent.com/dzx-dzx/Course-Selection-Assistant/master/Untitled-1.user.js
 // @updateURL https://raw.githubusercontent.com/dzx-dzx/Course-Selection-Assistant/master/Untitled-1.user.js
 // @homepageURL https://github.com/dzx-dzx/Course-Selection-Assistant
+// @license Apache
 // ==/UserScript==
 
 (async function () {
