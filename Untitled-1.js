@@ -9,8 +9,8 @@
 // @grant GM_setValue
 // @grant GM_getValue
 // @grant GM_xmlhttpRequest
-// @downloadURL https://github.com/dzx-dzx/Course-Selection-Assistant/raw/master/Untitled-1.js
-// @updateURL https://github.com/dzx-dzx/Course-Selection-Assistant/raw/master/Untitled-1.js
+// @downloadURL https://raw.githubusercontent.com/dzx-dzx/Course-Selection-Assistant/master/Untitled-1.js
+// @updateURL https://raw.githubusercontent.com/dzx-dzx/Course-Selection-Assistant/master/Untitled-1.js
 // @homepageURL https://github.com/dzx-dzx/Course-Selection-Assistant
 // ==/UserScript==
 
