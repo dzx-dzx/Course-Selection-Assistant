@@ -2,7 +2,7 @@
 一个小工具,在选课界面中为列出的课程添加一个跳转到[选课社区](course.sjtu.plus)的按钮.
 ## 安装
 请先下载并安装浏览器插件tampermonkey.
-[点此](https://github.com/dzx-dzx/TM/raw/master/Untitled-1.js)以安装插件.
+[点此](https://github.com/dzx-dzx/Course-Selection-Assistant/raw/master/Untitled-1.js)以安装插件.
 ## 注意
 * 部分课程可能没有出现按钮,此时console(大概)会记录并报告问题所在.欢迎在这里开issue报告问题.
 * 插件(还)未在网络与计算性能上进行优化.作者个人并未察觉明显的性能问题,但暂时不推荐对性能要求高的场合使用.
