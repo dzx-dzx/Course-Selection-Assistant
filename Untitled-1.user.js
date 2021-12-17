@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SJTU-Course Selection Assistant
 // @namespace    http://tampermonkey.net/
-// @version      0.1.1
+// @version      0.2.0
 // @description  添加一个打开选课社区(course.sjtu.plus)的按钮
 // @author       Me
 // @match        https://i.sjtu.edu.cn/xsxk/zzxkyzb_cxZzxkYzbIndex.html*
@@ -69,7 +69,7 @@
         }
 
         const button = document.createElement("button")
-        button.onclick = function () { window.open(`https://course.sjtu.plus/course/${id}`, "course"/*覆盖前一窗口,改成"_blank"以新建*/) }
+        button.onclick = function () { window.open(`https://course.sjtu.plus/course/${id}`, "_blank"/*始终新建窗口,改成"course"以覆盖前一窗口*/) }
         button.setAttribute("class", "btn btn-primary btn-sm")
         button.textContent = "跳转到选课社区"
         tr.querySelector("td.jxbmc").append(document.createElement("br"), button)
