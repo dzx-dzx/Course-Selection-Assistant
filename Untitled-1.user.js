@@ -19,6 +19,7 @@
     'use strict';
     // Your code here...
     
+    //From https://stackoverflow.com/questions/21271997/how-to-overwrite-a-function-using-a-userscript
     function showHideJxb(obj){
         if($(obj).children(".expand_close").attr("class").indexOf("expand1")>0){
             $(obj).children(".expand_close").removeClass('expand1').addClass('close1');
