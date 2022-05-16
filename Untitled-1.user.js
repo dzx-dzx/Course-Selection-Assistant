@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         SJTU-Course Selection Assistant
 // @namespace    http://tampermonkey.net/
-// @version      0.3.0
+// @version      0.4.0
 // @description  添加一个打开选课社区(course.sjtu.plus)的按钮
 // @author       Me
 // @match        https://i.sjtu.edu.cn/xsxk/zzxkyzb_cxZzxkYzbIndex.html*
@@ -109,5 +109,31 @@
         mutationList.forEach((mutation) => { if (mutation.target.getAttribute("class") === "kkxymc") addButton(mutation.target.parentElement) })
     })
     observer.observe(document.querySelector("#displayBox"), { "childList": true, "subtree": true })
+    
+    const saveSelectedCourseButton = document.createElement("button")
+    saveSelectedCourseButton.onclick = function(){
+        function getSelectedCourseCode(){
+            return [...document.querySelectorAll("div.right_div > div > ul td> p.jxb").values()].map(p=>p.getAttribute("title").split("-").at(-2))
+        }
+        let selectedCourseCode=getSelectedCourseCode().join(" ")
+        selectedCourseCode=window.prompt("将保存以下课程代号:", selectedCourseCode)
+        if(selectedCourseCode) GM_setValue("selected_course_code",selectedCourseCode)
+    }
+    saveSelectedCourseButton.setAttribute("class", "btn btn-primary btn-sm")
+    saveSelectedCourseButton.textContent = "保存已选课到本地"
+
+    const loadPreSelectedCourseButton = document.createElement("button")
+    loadPreSelectedCourseButton.onclick = function(){
+        let selectedCourseCode=GM_getValue("selected_course_code")
+        selectedCourseCode=window.prompt("将加载以下课程代号:", selectedCourseCode)
+        if(selectedCourseCode){
+            document.querySelector(".form-control.input-sm.filter-input").value=selectedCourseCode
+            document.querySelector(".input-group-btn").querySelector(".btn.btn-primary.btn-sm").click()
+        }
+    }
+    loadPreSelectedCourseButton.setAttribute("class", "btn btn-primary btn-sm")
+    loadPreSelectedCourseButton.textContent = "加载之前保存的课程"
+
+    document.querySelector("div.col-sm-8.col-md-8.buttons").prepend(saveSelectedCourseButton,loadPreSelectedCourseButton)
 
 })();
