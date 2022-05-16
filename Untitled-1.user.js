@@ -18,6 +18,32 @@
 (async function () {
     'use strict';
     // Your code here...
+    
+    function showHideJxb(obj){
+        if($(obj).children(".expand_close").attr("class").indexOf("expand1")>0){
+            $(obj).children(".expand_close").removeClass('expand1').addClass('close1');
+            $(obj).next(".panel-body").slideDown();
+        }else{
+            $(obj).children(".expand_close").removeClass('close1').addClass('expand1');
+            $(obj).next(".panel-body").slideUp();
+        }
+    }
+    addJS_Node (showHideJxb);
+    function addJS_Node (text, s_URL, funcToRun, runOnLoad) {
+        var D                                   = document;
+        var scriptNode                          = D.createElement ('script');
+        if (runOnLoad) {
+            scriptNode.addEventListener ("load", runOnLoad, false);
+        }
+        scriptNode.type                         = "text/javascript";
+        if (text)       scriptNode.textContent  = text;
+        if (s_URL)      scriptNode.src          = s_URL;
+        if (funcToRun)  scriptNode.textContent  = '(' + funcToRun.toString() + ')()';
+
+        var targ = D.getElementsByTagName ('head')[0] || D.body || D.documentElement;
+        targ.appendChild (scriptNode);
+    }
+    
     const courseToIdRaw = (await (async () => {
         const courseListTimestampResponse = await new Promise((resolve, reject) => {
             GM_xmlhttpRequest({
