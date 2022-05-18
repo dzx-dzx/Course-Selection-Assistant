@@ -1,5 +1,5 @@
 # SJTU选课助手
-一个 ~~(半)年更的~~ 小工具,在选课界面中为列出的课程添加一个跳转到[选课社区](course.sjtu.plus)的按钮.
+一个 ~~(半)年更的~~ 小工具,在选课界面中为列出的课程添加一个跳转到[选课社区](https://course.sjtu.plus)的按钮.
 ## 安装
 请先下载并安装浏览器插件tampermonkey.
 [点此](https://greasyfork.org/en/scripts/437154-sjtu-course-selection-assistant)以安装插件.
